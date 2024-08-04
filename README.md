@@ -4,9 +4,4 @@ It uses `ModTheSpire`'s patching framework to add these capabilities.
 
 # Requirements
 * Java 1.8
-
-# Getting Started
-## Depedencies
-Copy the following to `${project-base}/lib`
-* `desktop-1.0.jar`
-* `ModTheSpire.jar`
+* ModTheSpire >= v3.30.x
