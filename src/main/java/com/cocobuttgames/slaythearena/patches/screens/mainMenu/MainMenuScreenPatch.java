@@ -12,7 +12,8 @@ public class MainMenuScreenPatch {
     public static class ArenaButtonPatch {
         @SpirePostfixPatch
         public static void setArenaButton(MainMenuScreen __instance) {
-            __instance.buttons.add(new MenuButton(MenuButtonPatch.ArenaClickResultPatch.ARENA, 12));
+            int numberOfOtherButtons = __instance.buttons.size();
+            __instance.buttons.add(new MenuButton(MenuButtonPatch.ArenaClickResultPatch.ARENA, numberOfOtherButtons++));
         }
     }
 
