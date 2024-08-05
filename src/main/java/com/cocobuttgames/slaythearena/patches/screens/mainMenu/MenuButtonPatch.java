@@ -20,7 +20,8 @@ public class MenuButtonPatch {
 
     @SpirePatch(clz = MenuButton.class, method = "setLabel")
     public static class ArenaLabelPatch {
-        public static void Postfix(MenuButton __instance, @ByRef String[] ___label) {
+        @SpirePostfixPatch
+        public static void setArenaLabel(MenuButton __instance, @ByRef String[] ___label) {
             if (__instance.result == ArenaClickResultPatch.ARENA) {
                 ___label[0] = "Arena";
             }
