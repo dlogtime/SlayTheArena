@@ -8,11 +8,9 @@ import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.characters.CharacterManager;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.ModHelper;
 import com.megacrit.cardcrawl.helpers.SeedHelper;
 import com.megacrit.cardcrawl.map.MapRoomNode;
 import com.megacrit.cardcrawl.random.Random;
@@ -20,7 +18,6 @@ import com.megacrit.cardcrawl.rooms.EmptyRoom;
 import com.megacrit.cardcrawl.screens.DungeonTransitionScreen;
 import com.megacrit.cardcrawl.screens.mainMenu.MainMenuScreen;
 import com.megacrit.cardcrawl.screens.mainMenu.MenuButton;
-import com.megacrit.cardcrawl.screens.mainMenu.MenuPanelScreen;
 
 
 public class MenuButtonPatch {
@@ -58,7 +55,7 @@ public class MenuButtonPatch {
         CardCrawlGame.chosenCharacter = AbstractPlayer.PlayerClass.IRONCLAD;
         CardCrawlGame.mainMenuScreen.isFadingOut = true;
         CardCrawlGame.mainMenuScreen.fadeOutMusic();
-        CardCrawlGame.nextDungeon = "TheEnding";     // TODO: Make this load an Arena Dungeon instead
+        CardCrawlGame.nextDungeon = "Arena";
         CardCrawlGame.dungeonTransitionScreen = new DungeonTransitionScreen("TheEnding");
         CardCrawlGame.mode = CardCrawlGame.GameMode.GAMEPLAY;
         Settings.isTrial = true;
