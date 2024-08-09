@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.dungeons.TheEnding;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.map.MapGenerator;
 import com.megacrit.cardcrawl.map.MapRoomNode;
@@ -43,14 +42,14 @@ public class Arena extends AbstractDungeon {
         long startTime = System.currentTimeMillis();
         map = new ArrayList<>();
         ArrayList<MapRoomNode> row1 = new ArrayList<>();
-        MapRoomNode bossNode = new MapRoomNode(3, 0);
-        bossNode.room = new MonsterRoomBoss();
+        MapRoomNode arenaNode = new MapRoomNode(3, 0);
+        arenaNode.room = new MonsterRoomBoss();
         MapRoomNode victoryNode = new MapRoomNode(3, 1);
         victoryNode.room = new TrueVictoryRoom();
         row1.add(new MapRoomNode(0, 0));
         row1.add(new MapRoomNode(1, 0));
         row1.add(new MapRoomNode(2, 0));
-        row1.add(bossNode);
+        row1.add(arenaNode);
         row1.add(new MapRoomNode(4, 0));
         row1.add(new MapRoomNode(5, 0));
         row1.add(new MapRoomNode(6, 0));
@@ -92,7 +91,12 @@ public class Arena extends AbstractDungeon {
         } 
     }
     
-    protected void generateMonsters() {}
+    protected void generateMonsters() {
+        eliteMonsterList = new ArrayList<>();
+        eliteMonsterList.add("Shield and Spear");
+        eliteMonsterList.add("Shield and Spear");
+        eliteMonsterList.add("Shield and Spear");
+    }
     
     protected void generateWeakEnemies(int count) {}
     
@@ -105,8 +109,6 @@ public class Arena extends AbstractDungeon {
     }
     
     protected void initializeBoss() {
-        bossList.add("The Heart");
-        bossList.add("The Heart");
         bossList.add("The Heart");
     }
     
